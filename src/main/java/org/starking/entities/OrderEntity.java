@@ -1,5 +1,7 @@
 package org.starking.entities;
 
+import java.math.BigDecimal;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,7 +15,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @Entity
-@Table(name = "order")
+@Table(name = "orderProducts")
 @Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @AllArgsConstructor
@@ -24,5 +26,11 @@ public class OrderEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@ToString.Include
 	@EqualsAndHashCode.Include
-	private Long id;
+	private Long orderId;
+	
+	private Long customerId;
+	
+	private String customerName;
+	
+	private BigDecimal orderValue;
 }
